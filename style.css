@@ -11,7 +11,7 @@ body{
 }
 .calculator-grid{
     display:grid;
-    min-height:100vh;
+    min-height:70vh;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4,100px);
@@ -39,9 +39,15 @@ body{
     justify-content: space-around;
     padding:10px;
 }
-
+h1{
+    text-align: center;
+}
 .span-two{
     grid-column: span 2;
+}
+
+.span-three{
+    grid-column: span 3;
 }
 
 .output .previous-operand{
