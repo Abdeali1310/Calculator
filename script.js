@@ -26,7 +26,7 @@ numberBtns.forEach((btn)=>{
         }else{
             return;
         }
-        console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
+        // console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
     })
     
 })
@@ -142,7 +142,7 @@ document.addEventListener('keydown',(e)=>{
             currentOperand.innerText += e.key;
             currentBtnValue = currentOperand.innerText;
             // console.log(currentBtnValue);
-            console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
+            // console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
         }else{
             return;
         }
@@ -154,13 +154,13 @@ document.addEventListener('keydown',(e)=>{
                 previousOperand.innerText = currentBtnValue + '÷';
                 currentOperand.innerText = '';
                 previousBtnValue = currentBtnValue;
-                console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
+                // console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
             }
             else{
                 previousOperand.innerText = currentBtnValue + operand;
                 currentOperand.innerText = '';
                 previousBtnValue = currentBtnValue;
-                console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
+                // console.log(`Current = ${currentBtnValue} ,previous = ${previousBtnValue}`);
             }
            
         }
