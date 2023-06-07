@@ -74,7 +74,7 @@ footer{
 }
 
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:425px) {
     .calculator-grid {
         display: grid;
         min-height: 70vh;
@@ -107,6 +107,6 @@ footer{
         font-size:25px;
     }
     footer{
-        font-size: 15px;
+        font-size: 15px ;
     }
 }

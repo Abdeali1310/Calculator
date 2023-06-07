@@ -79,10 +79,10 @@ equals.addEventListener('click',(e)=>{
     }
     else if(operand === '*'){
         result = mul(Number(currentBtnValue),Number(previousBtnValue));
-        currentOperand.innerText = result;
+        currentOperand.innerText = Math.round(result * 100)/100;;
         previousOperand.innerText = '';
         previousBtnValue = 0;
-        currentBtnValue =  result;
+        currentBtnValue =  Math.round(result * 100)/100;;
     }
     else if(operand === '÷'){
         if(currentBtnValue == '0')
@@ -197,10 +197,10 @@ document.addEventListener('keydown',(e)=>{
         }
         else if(operand === '*'){
             result = mul(Number(currentBtnValue),Number(previousBtnValue));
-            currentOperand.innerText = result;
+            currentOperand.innerText = Math.round(result * 100)/100;;
             previousOperand.innerText = '';
             previousBtnValue = 0;
-            currentBtnValue =  result;
+            currentBtnValue =  Math.round(result * 100)/100;;
             
         }
         else if(operand === '/' || operand === '÷'){
