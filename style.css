@@ -72,3 +72,41 @@ footer{
     padding:10px;
     font-size:20px;
 }
+
+
+@media screen and (max-width:320px) {
+    .calculator-grid {
+        display: grid;
+        min-height: 70vh;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(4,60px);
+        grid-template-rows: minmax(60px,auto) repeat(5,60px);
+    }
+
+    .calculator-grid > button{
+        background-color: rgb(255,255,255,.75);
+        cursor: pointer;
+        border:1px solid white;
+        outline: none;
+        font-size:1.25rem;
+    }
+
+    .output .current-operand {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .output .previous-operand {
+        font-size: 1rem;
+        color: rgb(255,255,255,.75);
+    }
+
+    h1 {
+        text-align: center;
+        font-size:25px;
+    }
+    footer{
+        font-size: 15px;
+    }
+}
