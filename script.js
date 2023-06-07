@@ -203,7 +203,7 @@ document.addEventListener('keydown',(e)=>{
             currentBtnValue =  result;
             
         }
-        else if(operand === '/'){
+        else if(operand === '/' || operand === '÷'){
             if(currentBtnValue == '0')
             {
                 currentOperand.innerText = 'ERROR';
