@@ -10,7 +10,8 @@ var num;
 const equals = document.querySelector("[data-equals");
 const AC = document.querySelector('[data-ac]');
 const DEL = document.querySelector("[data-delete");
-
+const point = document.querySelector("[data-point = '.']");
+var pointValue;
 numberBtns.forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
         num = btn.getAttribute("data-number");
@@ -20,7 +21,6 @@ numberBtns.forEach((btn)=>{
             currentOperand.innerText += num;
             currentBtnValue = currentOperand.innerText;
             // console.log(currentBtnValue);
-            
         }else{
             return;
         }
@@ -29,6 +29,20 @@ numberBtns.forEach((btn)=>{
     
 })
 
+point.addEventListener('click',(e)=>{
+    pointValue= point.getAttribute("data-point");
+    if(currentBtnValue == ''){
+        currentBtnValue += pointValue
+        currentOperand.innerText = currentBtnValue;
+    }
+    else if(currentBtnValue.split('').includes('.')){
+        return
+    }else{
+        currentBtnValue += pointValue
+        currentOperand.innerText = currentBtnValue;
+    }
+    
+})
 
 operationBtns.forEach((op)=>{
     op.addEventListener("click",(e)=>{
@@ -51,27 +65,35 @@ equals.addEventListener('click',(e)=>{
         result = add(Number(currentBtnValue),Number(previousBtnValue));
         currentOperand.innerText = result;
         previousOperand.innerText = '';
+        previousBtnValue = 0;
+        currentBtnValue =  result;     
     }
     else if(operand === '-'){
         result = sub(Number(currentBtnValue),Number(previousBtnValue));
         currentOperand.innerText = result;
         previousOperand.innerText = '';
+        previousBtnValue = 0;
+        currentBtnValue =  result;
     }
     else if(operand === '*'){
         result = mul(Number(currentBtnValue),Number(previousBtnValue));
         currentOperand.innerText = result;
         previousOperand.innerText = '';
+        previousBtnValue = 0;
+        currentBtnValue =  result;
     }
     else if(operand === '÷'){
-        if(currentBtnValue == '0' || previousBtnValue == '1')
+        if(currentBtnValue == '0' || previousBtnValue == '0')
         {
             currentOperand.innerText = 'ERROR';
             previousOperand.innerText = '';
         }
         else{
             result = div(Number(currentBtnValue),Number(previousBtnValue));
-            currentOperand.innerText = result;
+            currentOperand.innerText = Math.round(result * 100)/100;
             previousOperand.innerText = '';
+            previousBtnValue = 0;
+            currentBtnValue =  Math.round(result * 100)/100;
         }
         
     }
@@ -83,6 +105,8 @@ equals.addEventListener('click',(e)=>{
 AC.addEventListener('click',(e)=>{
     currentOperand.innerText = '';
     previousOperand.innerText = '';
+    currentBtnValue = 0;
+    previousBtnValue = 0;
 });
 
 DEL.addEventListener('click',(e)=>{
